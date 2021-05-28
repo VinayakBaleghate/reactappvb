@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import './mystyle.css';
+//import App from './App';
+import Navbar from './component/Navbar';
+import Slider from './component/Slider';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Navbar />
+    <Slider />    
   </React.StrictMode>,
   document.getElementById('root')
 );
