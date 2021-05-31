@@ -6,6 +6,7 @@ import './mystyle.css';
 import Navbar from './component/Navbar';
 import Slider from './component/Slider';
 import Signup from './component/Signup';
+import Cakelist from './component/Cakelist';
 import reportWebVitals from './reportWebVitals';
 
 var userDetails = {
@@ -13,13 +14,12 @@ var userDetails = {
 	password: "123456"
 }
 
-
-
 ReactDOM.render(
   <React.StrictMode>
     <Navbar sitetitle="MyReactApp" mylink="test" userDetails={userDetails} ></Navbar>
     <Slider />    
     <Signup />    
+    <Cakelist />    
   </React.StrictMode>,
   document.getElementById('root')
 );

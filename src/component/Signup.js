@@ -55,30 +55,4 @@ class Signup extends Component {
 }
 
 
-
-
-// function Signup() {
-//     return(
-//         <div className="container-fluid p-4 mb-5" style={{backgroundColor: "#f2f2f2"}}>
-//             <form>
-//                 <div className="form-row">
-//                     <div className="col-md-3">
-//                         <input type="text" className="form-control" placeholder="First name" />
-//                     </div>
-//                     <div className="col-md-3">
-//                         <input type="text" className="form-control" placeholder="Last name" />
-//                     </div>
-//                     <div className="col-md-5">
-//                         <input type="emil" className="form-control" placeholder="Email" />
-//                         <p id="errorEmail"> </p>
-//                     </div>
-//                     <div className="col-md-1">
-//                     <button className="btn btn-outline-success my-2 my-sm-0" onClick={onSubmit}>Submit</button>
-//                     </div>
-//                 </div>
-//             </form>
-//         </div>
-//     );
-// }
-
 export default Signup;
