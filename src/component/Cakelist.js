@@ -14,7 +14,7 @@ function Cakelist() {
         })
         .then(function (response) {
             setCakes(response.data.data);
-            console.log(response.data.data);
+            //console.log(response.data.data);
         });
    }, [])
     
