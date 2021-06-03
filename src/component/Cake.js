@@ -1,10 +1,12 @@
 function Cake(props) {
     return(
-        <div className="card col cake-item mx-2">
-            <img src={props.data.image} className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{props.data.name}</h5>
-                <p className="card-text">{props.data.price}</p>                
+        <div className="col-md-3 cake-item my-3">
+            <div className="card px-3">
+                <img src={props.data.image} className="card-img-top" alt="..." />
+                <div className="card-body text-center">
+                    <h5 className="card-title">{props.data.name}</h5>
+                    <p className="card-text">{props.data.price}</p>                
+                </div>
             </div>
         </div>
     )

@@ -11,15 +11,13 @@ function Slider() {
             <div className="carousel-item active">
             <img src="./slide1.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-                <h5></h5>
-                <p></p>
+                
             </div>
             </div>
             <div className="carousel-item">
             <img src="./slide2.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block">
-                <h5></h5>
-                <p></p>
+                
             </div>
             </div>
         </div>

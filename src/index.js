@@ -1,25 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './mystyle.css';
-//import App from './App';
-import Navbar from './component/Navbar';
-import Slider from './component/Slider';
-import Signup from './component/Signup';
-import Cakelist from './component/Cakelist';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-var userDetails = {
-	userName: "Vinayak",
-	password: "123456"
-}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navbar sitetitle="MyReactApp" mylink="test" userDetails={userDetails} ></Navbar>
-    <Slider />    
-    <Signup />    
-    <Cakelist />    
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
