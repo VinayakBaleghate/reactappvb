@@ -1,19 +1,25 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-let searchValue='';
-function handleOnclick(e) {
-    e.preventDefault();
-    if (searchValue !== '' || searchValue !== null ) {
-        alert(searchValue);
-        console.log('Search value is ', searchValue); 
-    }   
-}
+
+var searchValue='';
+
 function handleOnchange(event) {
     searchValue = event.target.value;
 }
 
 function Navbar(props) {
+
+    let getSearch = (event)=>{
+        event.preventDefault();
+        console.log('search value is ', searchValue)
+        if (event.target.value.trim()!== '' || event.target.value.trim()!== undefined) {
+            var url = '/search?q='+searchValue
+            props.history.push(url) 
+        }
+        
+    }
+
     //console.log(props);
     var [isLoggedIn, setLogin] = useState(false);
     return(
@@ -48,7 +54,7 @@ function Navbar(props) {
             </ul>
             <form className="form-inline my-2 my-lg-0">
             <input id="test" onChange={handleOnchange} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" onClick={handleOnclick}>Search</button>
+            <button className="btn btn-outline-success my-2 my-sm-0" onClick={getSearch}>Search</button>
             </form>
             {!isLoggedIn && <button className="btn btn-success my-2 my-sm-0 mx-4" onClick={ ()=> setLogin(true) }>Login</button>}
             {isLoggedIn && <button className="btn btn-danger my-2 my-sm-0 mx-4" onClick={ ()=> setLogin(false) }>Logout</button>}
@@ -58,4 +64,5 @@ function Navbar(props) {
     );
 }
 
-export default Navbar;
+// export default Navbar;
+export default withRouter(Navbar);

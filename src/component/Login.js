@@ -38,7 +38,7 @@ class Login extends Component {
                     self.setState({emailerrors:response.data.message})
                 } else{
                     self.setState({emailerrors:"Logged in successful"})
-                    //history.push("/home");  
+                     
                 }      
                         
             });

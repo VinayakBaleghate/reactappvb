@@ -4,6 +4,8 @@ import './mystyle.css';
 import Navbar from './component/Navbar';
 import Home from './component/Home';
 import Login from './component/Login';
+import Cakedetails from './component/Cakedetails';
+import Search from './component/Search';
 import PageNotFound from './component/PageNotFound';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -20,6 +22,8 @@ function App() {
       <Switch>
         <Route exact path="/" > <Home/> </Route>     
         <Route path="/login" component={Login} />      
+        <Route path="/cake/:cakeid" component={Cakedetails} />      
+        <Route path="/search" component={Search} />      
         <Route exact Link="/*"> <PageNotFound /> </Route> 
       </Switch>
            
