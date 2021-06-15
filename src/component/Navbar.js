@@ -22,6 +22,7 @@ function Navbar(props) {
 
     //console.log(props);
     var [isLoggedIn, setLogin] = useState(false);
+    var username = localStorage.getItem("username");
     return(
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <Link className="navbar-brand" to="/">{props.sitetitle}</Link>
@@ -33,9 +34,6 @@ function Navbar(props) {
             <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
                 <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
-            </li>
-            <li className="nav-item">
-                <Link className="nav-link" to="/login">Login</Link>
             </li>
             <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,11 +52,11 @@ function Navbar(props) {
             </ul>
             <form className="form-inline my-2 my-lg-0">
             <input id="test" onChange={handleOnchange} className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" onClick={getSearch}>Search</button>
+            <button className="btn btn-outline-success my-2 my-sm-0">Search</button>
             </form>
-            {!isLoggedIn && <button className="btn btn-success my-2 my-sm-0 mx-4" onClick={ ()=> setLogin(true) }>Login</button>}
-            {isLoggedIn && <button className="btn btn-danger my-2 my-sm-0 mx-4" onClick={ ()=> setLogin(false) }>Logout</button>}
-            
+            { !username && <Link to="/login"><button className="btn btn-success my-sm-0 mx-2">Login</button></Link> }
+            { username && <Link to="/logout"><button className="btn btn-danger my-sm-0 mx-2">Logout</button></Link> }
+            { !username && <Link to="/register"><button className="btn btn-success my-sm-0 mx-2">Register</button></Link> }
         </div>
         </nav>
     );

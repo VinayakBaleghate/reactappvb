@@ -4,13 +4,14 @@ import Cake from './Cake';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 function Cakelist() {
     var [cakes, setCakes] = useState( [] )
    useEffect( () => {
         axios({
             method: 'get',
-            url: 'https://apibyashu.herokuapp.com/api/allcakes',
-            //responseType: 'stream'
+            //url: 'https://apibyashu.herokuapp.com/api/allcakes',
+            url: process.env.REACT_APP_BASE_URL+'/allcakes',
         })
         .then(function (response) {
             setCakes(response.data.data);

@@ -16,12 +16,12 @@ function Cakedetails(props) {
     let quantityChange=(e)=>{
 		setQty(e.target.value);
 	}
-
+    console.log('>>>>>>>>>>>>>>>>', process.env.REACT_APP_BASE_URL)
     var [cake, setCakes] = useState( [] )
     useEffect( () => {
          axios({
              method: 'get',
-             url: 'https://apibyashu.herokuapp.com/api/cake/'+params.cakeid,
+             url: process.env.REACT_APP_BASE_URL+'/cake/'+params.cakeid,
              //responseType: 'stream'
          })
          .then(function (response) {
@@ -55,16 +55,16 @@ function Cakedetails(props) {
 
                     <div className="col-lg-12">
                         <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Cake Detail</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Other Details</a>
+                            <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a className="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Cake Detail</a>
+                                <a className="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Other Details</a>
                             </div>
                         </nav>
-                        <div class="tab-content bg-light p-4" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div className="tab-content bg-light p-4" id="nav-tabContent">
+                            <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <span>{cake.description}</span>                                
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                 <p className="tag-section"><strong>Weight : </strong> {cake.weight} Kg</p>
                                 <p className="tag-section"><strong>Flavour : </strong> {cake.flavour}</p>
                                 <p className="tag-section"><strong>Occasion : </strong> {cake.type}</p>
